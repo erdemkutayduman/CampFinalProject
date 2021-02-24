@@ -15,6 +15,9 @@ namespace Business.Abstract
         IDataResult<List<ProductDetailDto>> GetProductDetails();
         IDataResult<Product> GetById(int productId);
         IResult Add(Product product);
+        IResult Update(Product product);
+
+
 
         //RESTFUL --> HTTP --> TCP // Bunlar o anki ihtiyaca göre kullanılabilen protokoller. 
         //Internet üzerinden ise HTTP ile. 
