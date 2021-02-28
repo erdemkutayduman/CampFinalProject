@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.CCS;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
@@ -31,7 +32,11 @@ namespace Business.Concrete
             
         }
 
-
+        // Kullanıcının girdiği parolaya biraz daha gğçlendirmek için sembol eklemeye salting, veritabanında gizlemeye hashing denir.
+        // Encryption şifreleme demek KEY ile ulaşırız. 
+        // admin editor vs Claim diyoruz Yetki için)
+        
+        [SecuredOperation("product.add")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
